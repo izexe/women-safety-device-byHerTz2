@@ -119,6 +119,7 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 | GPS Module (NEO-6M) | 1 |UART, 9600 bps, external antenna | ₹500 | Local electronics store |
 | Push Button| 1 | momentary tactile switch | ₹10 | Local electronics store|
 | ADXL335 Accelerometer | 1 | 3-axis, analog output, ±3 g | ₹250| FAB Lab|
+
 **Total Estimated Cost:** ₹1486
 
 #### Assembly Instructions
@@ -157,46 +158,40 @@ After completing all connections, upload the program to the ESP32. Once powered,
 ### Video
 [Add your demo video link here - YouTube, Google Drive, etc.]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+This video demonstrates the working of a gesture-based women safety device developed using an ESP32 microcontroller. The system integrates an ADXL335 accelerometer, a GPS module, a push button, and a Telegram-based alert mechanism to provide real-time emergency notifications. At the beginning of the demo, the system is powered on and initializes all connected modules. The ESP32 establishes a Wi-Fi connection and waits in standby mode. The user then presses the push button, which arms the system and enables motion detection for a predefined time window. This step ensures intentional activation and prevents false triggering. When abnormal or panic motion is detected using the accelerometer, the system identifies it as an emergency. The ESP32 immediately retrieves the user’s location from the GPS module and sends an emergency alert message via a Telegram bot using Wi-Fi connectivity. The alert includes the current location link, which can be opened directly in Google Maps. The serial monitor output is shown during the demonstration to verify system status, motion detection, GPS data, and successful message transmission. This video highlights the reliability, real-time response, and practical implementation of the proposed women safety system. Since the demonstration is conducted indoors, the GPS module may not acquire a satellite fix; however, the alert mechanism and system logic are successfully demonstrated.
 
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
 
----
+## AI Tools Used 
 
-## AI Tools Used (Optional - For Transparency Bonus)
+**Tool Used:** ChatGPT
 
-If you used AI tools during development, document them here for transparency:
-
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
-
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+**Purpose:**
+- Concept clarification and system design guidance
+- Debugging assistance for ESP32 code and sensor integration
+- Understanding communication protocols (UART, Wi-Fi, HTTP)
+- Improving documentation clarity (problem statement, solution, features, etc.)
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+-“How to interface ADXL335 accelerometer with ESP32?”
+-“Debug ESP32 code for GPS and Wi-Fi communication”
+-“How to send emergency alerts using Telegram bot from ESP32?”
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** 30-40%
 
 **Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
-
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
+-Overall architecture design and system planning
+-Selection of components and hardware connections
+-Circuit assembly and physical wiring
+-Custom logic implementation (arming mechanism, false trigger prevention, timing logic)
+-Integration of sensors, GPS, and Telegram communication
+-Testing, debugging, and validation of the complete system
 
 ---
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- Iza K Jamludheen: [Specific contributions - e.g., Frontend development, API integration, etc.]
+- Ameena Jennath KS: [Specific contributions - e.g., Backend development, Database design, etc.]
 
 ---
 
