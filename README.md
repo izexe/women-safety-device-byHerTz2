@@ -65,6 +65,7 @@ Accelerometer: ADXL335 - 3 axus accelerometer with analog output
 GPS Module: NEO-6M to provide real time latitude and longitude.
 Push button: Momentary push button to prevent false triggers.
 Resistor: 5.7K ohm, the push button requires a resistor to avoid floating input values.
+Jumper Wires
 
 #### Circuit Setup
 The circuit is constructed by interfacing all input and output components with the ESP32 microcontroller, which acts as the central control unit.
