@@ -2,109 +2,75 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# SECUREHER 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: HerTz
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-
-### Hosted Project Link
-[mention your project hosted link here]
+- Member 1: Iza K Jamaludheen - SCMS School of Engineering & Technology
+- Member 2: Ameena Jennath KS - SCMS School of Engineering & Technology
 
 ### Project Description
-[2-3 lines about what your project does]
+The project aims to design and develop a smart women safety wearable device that provides immediate assistance during emergency situations. The system is designed to be compact, portable, and easy to use, ensuring quick activation even under stress.
+The device is built using an ESP32 microcontroller, an ADXL335 accelerometer, a GPS module, and a push button. The accelerometer continuously monitors the user’s motion, while the push button acts as an arming mechanism to prevent false triggers. When the user presses the button, the system enables motion detection for a predefined time window. If abnormal or panic motion is detected within this interval, the system identifies it as an emergency.
 
 ### The Problem statement
-[What problem are you solving?]
+Ensuring the safety of women in public and isolated environments remains a critical social challenge. In emergency situations, victims may not be able to access their mobile phones to make calls or send messages due to panic, physical restraint, or time constraints.
+Therefore, there is a need for a compact, wearable, and easy-to-activate safety device that can automatically detect distress situations and send emergency alerts with location information. The system should minimize false triggering, operate in real time, and provide reliable communication to emergency contacts
 
 ### The Solution
-[How are you solving it?]
-
+The problem of delayed or inaccessible emergency communication is solved by designing a gesture-based, IoT-enabled women safety device that operates independently of mobile phone interaction during critical situations.
+The solution uses an ESP32 microcontroller as the central processing unit. A push button is used to intentionally arm the system, which prevents accidental activation. Once armed, an ADXL335 accelerometer continuously monitors the user’s motion to detect abnormal or panic movements.
+When the detected acceleration exceeds a predefined threshold within a specific time window, the system identifies the situation as an emergency. The ESP32 then retrieves the user’s real-time location using a GPS module. This information, along with an emergency alert message, is transmitted through a Telegram bot using Wi-Fi connectivity.
 ---
 
 ## Technical Details
 
 ### Technologies/Components Used
 
-**For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
-
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
 
+- Main components:
+  ESP32 Development Board – Main microcontroller
+  ADXL335 Accelerometer – Motion / panic gesture detection
+  GPS Module (NEO-6M) – Real-time location tracking
+  Push Button – User confirmation to avoid false triggering
+  
+- Tools required:
+  Arduino IDE
+  
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: Gesture based emergency detection: detects a panic motion using a 3-axis accelerometer
+- Feature 2: Instant Alert via telegram: Sends emergency notifications with location details to predefined contacts through a Telegram bot using Wi-Fi connectivity.
+- Feature 3: Real-Time Location Tracking: Fetches live geographical coordinates using a GPS module and shares the user’s location during emergencies
+- Feature 4: False Trigger Prevention: Uses a push-button arming mechanism and a predefined time window to ensure alerts are triggered only with user intent.
 
 ---
 
-## Implementation
-
-### For Software:
-
-#### Installation
-```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
-```
-
-#### Run
-```bash
-[Run commands - e.g., npm start, python app.py]
-```
+## Implementation]
 
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+Microcontroller: ESP32 Development Board [ESP32devkit] with wifi module
+Accelerometer: ADXL335 - 3 axus accelerometer with analog output
+GPS Module: NEO-6M to provide real time latitude and longitude.
+Push button: Momentary push button to prevent false triggers.
 
 #### Circuit Setup
-[Explain how to set up the circuit]
-
+The circuit is constructed by interfacing all input and output components with the ESP32 microcontroller, which acts as the central control unit.
+The ADXL335 accelerometer is powered using the 3.3 V supply from the ESP32, and its X, Y, and Z axis output pins are connected to the ESP32’s pins to continuously monitor motion. A push button is connected to a digital pin configured with an internal pull-up resistor, allowing the user to arm the system intentionally.
+The GPS module is powered using the 5 V supply and communicates with the ESP32 through UART serial communication, where the GPS transmit pin is connected to the ESP32 receive pin and vice versa. This enables continuous reception of location data.
+The ESP32 is powered via USB or battery, and once the connections are established, the circuit is ready for programming and testing.
 ---
 
 ## Project Documentation
-
-### For Software:
-
-#### Screenshots (Add at least 3)
-
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-#### Diagrams
-
-**System Architecture:**
-
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
-
-**Application Workflow:**
-
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
 
 ### For Hardware:
 
