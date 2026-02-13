@@ -112,140 +112,43 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 
 | Component | Quantity | Specifications | Price | Link/Source |
 |-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
+| ESP32 Dev Board | 1 | Dual-core MCU, Wi-Fi 2.4 GHz, 3.3 V logic | ₹600 | Local electronics store |
+| Resistor| 1 | 5.7k| ₹1 each | Local electronics store|
+| Breadboard | 1 | 830 points | ₹100 | Local electronics store |
+| Jumper Wires | 10 | Female-to-Female | ₹25 | Local electronics store |
+| GPS Module (NEO-6M) | 1 |UART, 9600 bps, external antenna | ₹500 | Local electronics store |
+| Push Button| 1 | momentary tactile switch | ₹10 | Local electronics store|
+| ADXL335 Accelerometer | 1 | 3-axis, analog output, ±3 g | ₹250| FAB Lab|
+**Total Estimated Cost:** ₹1486
 
 #### Assembly Instructions
 
 **Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
+1. Gather all components listed in the Bill of Materials (BOM).
+2. Verify specifications of each component (operating voltage, pin configuration).
+3. Ensure the ESP32, GPS module, and accelerometer are undamaged.
+4. Prepare a clean workspace with a breadboard and jumper wires.
 ![Step 1](images/assembly-step1.jpg)
 *Caption: All components laid out*
 
 **Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
+1. Place the ESP32 development board near the breadboard
+2. Connect the ESP32 3.3 V pin to the breadboard positive rail (for ADXL335).
+3. Connect the ESP32 5 V pin to the breadboard positive rail (for GPS module).
+4. Connect the ESP32 GND pin to the breadboard ground rail.
+5. Ensure all modules share a common ground.
 ![Step 2](images/assembly-step2.jpg)
 *Caption: Power connections completed*
 
 **Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
+1. Place the push button on the breadboard.
+2. Place the ADXL335 module on the breadboard.
+3. Place the GPS module on the breadboard.
 
 **Final Assembly:**
+After completing all connections, upload the program to the ESP32. Once powered, the system initializes, connects to Wi-Fi, and waits for user input. The completed setup is now ready for testing and demonstration.
 ![Final Build](images/final-build.jpg)
 *Caption: Completed project ready for testing*
-
----
-
-### For Scripts/CLI Tools:
-
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
 
 ---
 
