@@ -54,7 +54,7 @@ List the key features of your project:
 
 ---
 
-## Implementation]
+## Implementation
 
 ### For Hardware:
 
@@ -63,6 +63,7 @@ Microcontroller: ESP32 Development Board [ESP32devkit] with wifi module
 Accelerometer: ADXL335 - 3 axus accelerometer with analog output
 GPS Module: NEO-6M to provide real time latitude and longitude.
 Push button: Momentary push button to prevent false triggers.
+Resistor: 5.7K ohm, the push button requires a resistor to avoid floating input values.
 
 #### Circuit Setup
 The circuit is constructed by interfacing all input and output components with the ESP32 microcontroller, which acts as the central control unit.
@@ -93,94 +94,14 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 ![Build](Add photos of build process here)
 *Explain the build steps*
 
-![Final](Add photo of final product here)
+<p align="center">
+  <img src="./SecureHer.jpeg">
+</p>
 *Explain the final build*
 
 ---
 
 ## Additional Documentation
-
-### For Web Projects with Backend:
-
-#### API Documentation
-
-**Base URL:** `https://api.yourproject.com`
-
-##### Endpoints
-
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
-
-**POST /api/endpoint**
-- **Description:** [What it does]
-- **Request Body:**
-```json
-{
-  "field1": "value1",
-  "field2": "value2"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Operation completed"
-}
-```
-
-[Add more endpoints as needed...]
-
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
-
----
 
 ### For Hardware Projects:
 
