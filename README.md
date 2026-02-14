@@ -87,17 +87,17 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 
 #### Build Photos
 
-![Team]
+Team
 <p align="center">
   <img src="./teamHerTz.jpeg">
 </p>
 
-![Components]
+Components
 <p align="center">
   <img src="./allcomp.jpeg">
 </p>
 
-![Build](
+Build
 
 <p align="center">
   <img src="./SecureHer.png">
@@ -164,6 +164,10 @@ After completing all connections, upload the program to the ESP32. Once powered,
 https://drive.google.com/file/d/1IC1RlFa6Btm0kpzLCH0GZjIPoMMjFAeP/view?usp=drivesdk
 
 This video demonstrates the working of a gesture-based women safety device developed using an ESP32 microcontroller. The system integrates an ADXL335 accelerometer, a GPS module, a push button, and a Telegram-based alert mechanism to provide real-time emergency notifications. At the beginning of the demo, the system is powered on and initializes all connected modules. The ESP32 establishes a Wi-Fi connection and waits in standby mode. The user then presses the push button, which arms the system and enables motion detection for a predefined time window. This step ensures intentional activation and prevents false triggering. When abnormal or panic motion is detected using the accelerometer, the system identifies it as an emergency. The ESP32 immediately retrieves the user’s location from the GPS module and sends an emergency alert message via a Telegram bot using Wi-Fi connectivity. The alert includes the current location link, which can be opened directly in Google Maps. The serial monitor output is shown during the demonstration to verify system status, motion detection, GPS data, and successful message transmission. This video highlights the reliability, real-time response, and practical implementation of the proposed women safety system. Since the demonstration is conducted indoors, the GPS module may not acquire a satellite fix; however, the alert mechanism and system logic are successfully demonstrated.
+
+<p align="center">
+  <img src="./SecureHer.png">
+</p>
 
 
 ## AI Tools Used 
