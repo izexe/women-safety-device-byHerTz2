@@ -129,7 +129,9 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 2. Verify specifications of each component (operating voltage, pin configuration).
 3. Ensure the ESP32, GPS module, and accelerometer are undamaged.
 4. Prepare a clean workspace with a breadboard and jumper wires.
-![Step 1](images/assembly-step1.jpg)
+<p align="center">
+  <img src="./allcomp.jpeg">
+</p>
 *Caption: All components laid out*
 
 **Step 2: Build the Power Supply**
@@ -138,8 +140,6 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 3. Connect the ESP32 5 V pin to the breadboard positive rail (for GPS module).
 4. Connect the ESP32 GND pin to the breadboard ground rail.
 5. Ensure all modules share a common ground.
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
 
 **Step 3: Add Components**
 1. Place the push button on the breadboard.
@@ -148,7 +148,10 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 
 **Final Assembly:**
 After completing all connections, upload the program to the ESP32. Once powered, the system initializes, connects to Wi-Fi, and waits for user input. The completed setup is now ready for testing and demonstration.
-![Final Build](images/final-build.jpg)
+<p align="center">
+  <img src="./SecureHer.png">
+</p>
+
 *Caption: Completed project ready for testing*
 
 ---
