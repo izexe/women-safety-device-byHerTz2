@@ -1,0 +1,177 @@
+#include <TinyGPSPlus.h>
+void sendTelegramMessage(String message);
+
+// -------- Pins --------
+#define X_PIN 34
+#define Y_PIN 35
+#define Z_PIN 32
+#define BUTTON_PIN 27
+
+unsigned long armTime = 0;
+#define ARM_WINDOW 10000   // 5 seconds
+
+
+// -------- GPS --------
+HardwareSerial gpsSerial(2);
+TinyGPSPlus gps;
+
+// -------- Variables --------
+int x_base, y_base, z_base;
+bool armed = false;
+
+#define SHAKE_THRESHOLD 800
+
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// -------- WiFi ----------
+const char* ssid = "choodu moola";
+const char* password = "izajamal123";
+
+// -------- Telegram -------
+String botToken = "8335742845:AAHEM3sEcWvDIj-QsatspICZUFHvzh6c6CU";
+String chatID  = "1676029697";
+
+void sendTelegramMessage(String message) {
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("WiFi not connected, Telegram not sent");
+    return;
+  }
+
+  HTTPClient http;
+  String encodedMsg = urlEncode(message);
+
+String url = "https://api.telegram.org/bot" + botToken +
+             "/sendMessage?chat_id=" + chatID +
+             "&text=" + encodedMsg;
+
+  http.begin(url);
+  int httpCode = http.GET();
+  http.end();
+
+  Serial.print("Telegram HTTP code: ");
+  Serial.println(httpCode);
+}
+
+String urlEncode(String str) {
+  String encoded = "";
+  char c;
+  char code0;
+  char code1;
+
+  for (int i = 0; i < str.length(); i++) {
+    c = str.charAt(i);
+    if (isalnum(c)) {
+      encoded += c;
+    } else {
+      code1 = (c & 0xf) + '0';
+      if ((c & 0xf) > 9) code1 = (c & 0xf) - 10 + 'A';
+      c = (c >> 4) & 0xf;
+      code0 = c + '0';
+      if (c > 9) code0 = c - 10 + 'A';
+      encoded += '%';
+      encoded += code0;
+      encoded += code1;
+    }
+  }
+  return encoded;
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+Serial.print("Connecting to WiFi");
+
+while (WiFi.status() != WL_CONNECTED) {
+  delay(500);
+  Serial.print(".");
+}
+
+Serial.println("\nWiFi connected");
+
+sendTelegramMessage("✅connected");
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+  gpsSerial.begin(9600, SERIAL_8N1, 16, 17);
+
+  delay(2000); // settle sensors
+
+  x_base = analogRead(X_PIN);
+y_base = analogRead(Y_PIN);
+z_base = analogRead(Z_PIN);
+
+
+
+  Serial.println("System Ready");
+  Serial.println("Press button to arm SOS detection");
+}
+
+void loop() {
+
+  // Read GPS data
+  while (gpsSerial.available()) {
+    gps.encode(gpsSerial.read());
+  }
+if (digitalRead(BUTTON_PIN) == LOW) {
+  armed = true;
+  armTime = millis();
+  Serial.println("Button pressed → Motion detection enabled for 10 seconds");
+  delay(500); // debounce
+}
+
+
+  if (armed) {
+    int x = analogRead(X_PIN);
+    int y = analogRead(Y_PIN);
+    int z = analogRead(Z_PIN);
+
+int delta = abs(x - x_base) + abs(y - y_base) + abs(z - z_base);
+
+    if (delta > SHAKE_THRESHOLD) {
+      Serial.println("🚨 SOS DETECTED 🚨");
+
+String message = "EMERGENCY ALERT \n";
+
+if (gps.location.isValid()) {
+  message += " Location:\nhttps://maps.google.com/?q=";
+  message += String(gps.location.lat(), 6);
+  message += ",";
+  message += String(gps.location.lng(), 6);
+} else {
+  message += "Location not available";
+}
+
+sendTelegramMessage(message);
+
+
+      if (gps.location.isValid()) {
+        Serial.print("Latitude  : ");
+        Serial.println(gps.location.lat(), 6);
+        Serial.print("Longitude : ");
+        Serial.println(gps.location.lng(), 6);
+
+        Serial.print("Maps Link : ");
+        Serial.print("https://maps.google.com/?q=");
+        Serial.print(gps.location.lat(), 6);
+        Serial.print(",");
+        Serial.println(gps.location.lng(), 6);
+      } else {
+        Serial.println("GPS not fixed yet");
+      }
+
+      Serial.println("----------------------------");
+
+      armed = false;   // reset after SOS
+      delay(3000);
+    }
+  }
+    if (armed && millis() - armTime > ARM_WINDOW) {
+    armed = false;
+    Serial.println("No motion detected → System disarmed");
+  }
+
+
+  delay(200);
+}
