@@ -167,6 +167,8 @@ This video demonstrates the working of a gesture-based women safety device devel
 
 <p align="center">
   <img src="./Screenshot 2026-02-14 031000.png">
+  <img src="WhatsApp Image 2026-02-14 at 5.45.49 AM.jpeg">
+
 </p>
 
 
