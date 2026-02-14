@@ -193,8 +193,8 @@ This video demonstrates the working of a gesture-based women safety device devel
 
 ## Team Contributions
 
-- Iza K Jamludheen: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- Ameena Jennath KS: [Specific contributions - e.g., Backend development, Database design, etc.]
+- Iza K Jamludheen: System design and overall architecture planning, ESP32 programming, integration of ADXL335 accelerometer and GPS module, testing and debugging of the complete hardware–software setup, and documentation preparation.
+- Ameena Jennath KS: Circuit assembly and hardware interfacing, push button integration, assistance in sensor calibration and signal testing, support in debugging and validation of system functionality, and contribution to project documentation and presentation.
 
 ---
 
