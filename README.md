@@ -79,13 +79,11 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 
 ### For Hardware:
 
-#### Schematic & Circuit
+#### Schematic
 
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+<p align="center">
+  <img src="./schematic.jpeg">
+</p>
 
 #### Build Photos
 
