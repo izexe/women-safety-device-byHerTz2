@@ -113,7 +113,7 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 | Component | Quantity | Specifications | Price | Link/Source |
 |-----------|----------|----------------|-------|-------------|
 | ESP32 Dev Board | 1 | Dual-core MCU, Wi-Fi 2.4 GHz, 3.3 V logic | ₹600 | Local electronics store |
-| Resistor| 1 | 5.7k| ₹1 each | Local electronics store|
+| Resistor| 1 | 5.6k| ₹1 each | Local electronics store|
 | Breadboard | 1 | 830 points | ₹100 | Local electronics store |
 | Jumper Wires | 10 | Female-to-Female | ₹25 | Local electronics store |
 | GPS Module (NEO-6M) | 1 |UART, 9600 bps, external antenna | ₹500 | Local electronics store |
