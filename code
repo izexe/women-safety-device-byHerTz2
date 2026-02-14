@@ -25,12 +25,12 @@ bool armed = false;
 #include <HTTPClient.h>
 
 // -------- WiFi ----------
-const char* ssid = "choodu moola";
-const char* password = "izajamal123";
+const char* ssid = "wifi123";
+const char* password = "123";
 
 // -------- Telegram -------
-String botToken = "8335742845:AAHEM3sEcWvDIj-QsatspICZUFHvzh6c6CU";
-String chatID  = "1676029697";
+String botToken = "8335742845xxxxx."
+String chatID  = "xxxxxxxx";
 
 void sendTelegramMessage(String message) {
   if (WiFi.status() != WL_CONNECTED) {
