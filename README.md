@@ -87,18 +87,22 @@ The ESP32 is powered via USB or battery, and once the connections are establishe
 
 #### Build Photos
 
-![Team](Add photo of your team here)
+![Team]
+<p align="center">
+  <img src="./teamHerTz.jpeg">
+</p>
 
-![Components](Add photo of your components here)
-*List out all components shown*
+![Components]
+<p align="center">
+  <img src="./allcomp.jpeg">
+</p>
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+![Build](
 
 <p align="center">
   <img src="./SecureHer.png">
 </p>
-*Explain the final build*
+
 
 ---
 
